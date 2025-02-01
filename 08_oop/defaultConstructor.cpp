@@ -9,6 +9,13 @@ public:
     int serving;
     vector<string> ingredients;
 
+    // default constructor 
+    Chai() {
+        teaName = "Unknown Tea";
+        serving = 1;
+        ingredients = {"Water", "Tea", "Leaves"};
+    }
+
     void displayChaiDetails()
     {
         cout << "Tea Name: " << teaName << endl
@@ -25,9 +32,6 @@ public:
 int main()
 {
     Chai c1;
-    c1.teaName = "Lemon Tea";
-    c1.serving = 3;
-    c1.ingredients = {"Water", "lemon","tea", "Sugar"};
     c1.displayChaiDetails();
     return 0;
 }
