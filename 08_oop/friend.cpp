@@ -1,28 +1,42 @@
 #include <iostream>
-#include <vector>
 #include <string>
 using namespace std;
 
-class Chai  {
-    private: 
-        string teaName;
-        int serving;
+class Chai
+{
+private:
+    string teaName;
+    int serving;
 
-    public: 
-        Chai(string name, int serve): teaName(name), serving(serve) {}
+public:
+    Chai(string name, int serve) : teaName(name), serving(serve) {}
 
-        void display() const {
-            cout<<"tea name: "<< teaName <<endl;
-        }
+    friend bool compServe(const Chai &chai1, const Chai &chai2);
+
+    void display() const
+    {
+        cout << "tea name: " << teaName << endl;
+    }
 };
 
-int main() {
-    Chai  masalaChai("Masala Chai", 4);
-    Chai  gingerChai("Ginger Chai", 8);
+bool compServe(const Chai &chai1, const Chai &chai2)
+{
+    return chai1.serving > chai2.serving;
+}
+
+int main()
+{
+    Chai masalaChai("Masala Chai", 4);
+    Chai gingerChai("Ginger Chai", 8);
 
     masalaChai.display();
     gingerChai.display();
 
-    
+    if(compServe(masalaChai, gingerChai)) {
+        cout<<"Masala chai is haveing more serving"<<endl;
+    } else {
+        cout<<"Masala chai is haveing less serving"<<endl;
+    }
+
     return 0;
 }
