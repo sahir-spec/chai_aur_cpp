@@ -33,9 +33,9 @@ int main()
     gingerChai.display();
 
     if(compServe(masalaChai, gingerChai)) {
-        cout<<"Masala chai is haveing more serving"<<endl;
+        cout << "Masala chai is having more servings" << endl;
     } else {
-        cout<<"Masala chai is haveing less serving"<<endl;
+        cout << "Masala chai is having fewer servings" << endl;
     }
 
     return 0;
